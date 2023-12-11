@@ -1,0 +1,45 @@
+[
+  {
+    "title": "Book DriveTest",
+    "file": "index",
+    "url": "/",
+    "roles": []
+  },
+  {
+    "title": "Exam",
+    "file": "exam",
+    "url": "/exam",
+    "roles": ["examiner"]
+  },
+
+  {
+    "title": "Appointment",
+    "file": "appointment",
+    "url": "/appointment",
+    "roles": ["admin"]
+  },
+  {
+    "title": "G2 Test",
+    "file": "g2",
+    "url": "/g2",
+    "roles": ["driver"]
+  },
+  {
+    "title": "G Test",
+    "file": "g",
+    "url": "/g",
+    "roles": ["driver"]
+  },
+  {
+    "title": "Login",
+    "file": "login",
+    "url": "/login",
+    "roles": ["none"]
+  },
+  {
+    "title": "Sign up",
+    "file": "signup",
+    "url": "/signup",
+    "roles": ["none"]
+  }
+]

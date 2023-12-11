@@ -1,0 +1,44 @@
+<form id="g2" class="d-none">
+  <h3>Appointment information</h3>
+  <div class="form-floating mb-4">
+    <select class="form-select" id="appointment">
+      <option style="display: none"></option>
+    </select>
+    <label for="userType">Appointment</label>
+  </div>
+  <h3>Personal information</h3>
+  <% [ {label: 'First Name', id: 'firstName'}, { label: 'Last Name', id:
+  'lastName' }, { label: 'License Number', id: 'licenseNo' },{ label: 'Age', id:
+  'age' }].forEach(({label, id}) => { %>
+  <div class="form-floating">
+    <input type="hidden" id="_id" />
+    <input
+      class="form-control"
+      id="<%=id %>"
+      type="text"
+      placeholder="Enter your <%=id.toLowerCase() %>..."
+      data-canEdit="false"
+    />
+    <label for="<%=id %>"> <%=label %> </label>
+  </div>
+  <br />
+  <% }) %>
+  <h3>Car information</h3>
+  <% [ {label: 'Make', id: 'make'}, { label: 'Model', id: 'model' }, { label:
+  'Year', id: 'year' },{ label: 'Plat Number', id: 'platNo' } ].forEach(({label,
+  id}) => { %>
+  <div class="form-floating">
+    <input
+      class="form-control"
+      id="<%=id %>"
+      type="text"
+      placeholder="<%= `Enter your ${id.toLowerCase()}...`%>"
+    />
+    <label for="<%=id %>"> <%=label %> </label>
+  </div>
+  <br />
+  <% }) %>
+  <button class="btn btn-primary text-uppercase g2-submit" type="submit">
+    Submit
+  </button>
+</form>

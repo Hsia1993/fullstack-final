@@ -1,0 +1,57 @@
+<!-- Page Header-->
+<header
+  class="masthead"
+  style="background-image: url('assets/img/appointment-bg.jpg')"
+>
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="site-heading">
+          <h1>Appointment</h1>
+          <span class="subheading">Create appointments for drivers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Page content -->
+<div class="container px-4 px-lg-5">
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-md-10 col-lg-8 col-xl-7">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="form-group">
+            <label for="weekSelector">Select Week:</label>
+            <select id="weekSelector" class="form-control">
+              <!-- Week options will be dynamically added here -->
+            </select>
+          </div>
+          <div id="calendar"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <h5>Selected Week's Timetable</h5>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+              </tr>
+            </thead>
+            <tbody id="timetable-body">
+              <!-- Timetable cells will be dynamically added here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<script src="/js/appointment.js"></script>
