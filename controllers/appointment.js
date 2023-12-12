@@ -13,7 +13,7 @@ const createAppointment = async (req, res) => {
 };
 const queryAppointments = async (req, res) => {
   try {
-    const data = await appointmentModal.find(req.query);
+    const data = await appointmentModal.find(req.query).populate("driver");
     res.status(200).send({ data });
   } catch (e) {
     res.status(400).send({ msg: e.message });
@@ -33,10 +33,24 @@ const deleteAppointment = async (req, res) => {
     res.status(400).send({ msg: e.message });
   }
 };
+const editAppointment = async (req, res) => {
+  try {
+    const { passed, comment } = req.body;
+    const data = await appointmentModal.findByIdAndUpdate(req.params.id, {
+      passed,
+      comment,
+      examiner: req.session.userId,
+    });
+    res.status(200).send({ data });
+  } catch (e) {
+    res.status(400).send({ msg: e.message });
+  }
+};
 
 module.exports = {
   "[POST] /appointment": createAppointment,
   "[GET] /appointments": queryAppointments,
   "[GET] /appointments/self": getMyAppointments,
   "[DELETE] /appointment/:id": deleteAppointment,
+  "[PUT] /appointment/:id": editAppointment,
 };

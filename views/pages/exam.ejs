@@ -17,16 +17,70 @@
 <!-- Page content -->
 <div class="container px-4 px-lg-5">
   <div class="row gx-4 gx-lg-5 justify-content-center">
-    <div class="col-md-10 col-lg-8 col-xl-7">
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page">Rating List</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Rating history</a>
-        </li>
-      </ul>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" data-tab="current"
+          >Rating List</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-tab="history">Rating history</a>
+      </li>
+    </ul>
+    <table class="mt-4 mb-4" id="exam-table"></table>
+  </div>
+</div>
+<div
+  class="modal fade"
+  id="rateModal"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+  aria-labelledby="rateModalLabel"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rateModalLabel">Rate Driver</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="rate">
+          <div class="form-floating mb-4">
+            <select class="form-control" id="passed">
+              <option>Success</option>
+              <option>Fail</option>
+            </select>
+            <label for="passed">Result</label>
+          </div>
+          <div class="form-floating">
+            <input
+              class="form-control"
+              id="comment"
+              type="text"
+              placeholder="Enter comment"
+            />
+            <label for="comment">Comment</label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary" id="rate-submit">
+          Submit
+        </button>
+      </div>
     </div>
   </div>
 </div>
+<script src="/js/validation.js"></script>
 <script src="/js/exam.js"></script>
